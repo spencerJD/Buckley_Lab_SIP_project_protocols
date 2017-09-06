@@ -1,21 +1,20 @@
 Creating a graphical heatmap of a 96-well plate:
 ==============================================================
 
+>Use the following code in R to create a heatmap of a 96-well plate based on a variable like [DNA] or intensity of fluorescence
 
-```
+added by Sara Sirois 9/6/2017
 
-#Use the following code in R to create a heatmap of a 96-well plate based on a variable like [DNA] or intensity of fluorescence
+taken from user "mnel" at https://stackoverflow.com/questions/13983225/plot-plate-layout-heatmap-in-r
 
-#added by Sara Sirois 9/6/2017
-
-#taken from user "mnel" at https://stackoverflow.com/questions/13983225/plot-plate-layout-heatmap-in-r
-#Useful infor for changing color gradient scale at http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually
+Useful info for changing color gradient scale at http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually
 
 #this code assumes you have a dataset named "DATA" which includes the variables "ROW" (A-H), "COLUMN" (1-12), and "INTENSITY".
 
 #FOR CODE OUTPUT EXAMPLE, click [HERE](https://user-images.githubusercontent.com/16819535/30114617-642c1912-92e6-11e7-9437-bbeb67421194.png)
 #https://user-images.githubusercontent.com/16819535/30114617-642c1912-92e6-11e7-9437-bbeb67421194.png
 
+```
 library(ggplot2)
 
 ggplot(DATA, aes(y = factor(ROW, rev(levels(ROW))),x = factor(COLUMN))) + 
