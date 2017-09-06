@@ -1,3 +1,7 @@
+Creating a graphical heatmap of a 96-well plate:
+==============================================================
+
+
 ```{r}
 
 #Use the following code in R to create a heatmap of a 96-well plate based on a variable like [DNA] or intensity of fluorescence
