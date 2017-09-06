@@ -19,3 +19,4 @@ ggplot(DATA, aes(y = factor(ROW, rev(levels(ROW))),x = factor(COLUMN))) +
      scale_color_gradient(low="grey", high="purple")   #change color gradient scheme (unless you don't dig purple, which is incomprehensible)
      
 ```
+
