@@ -13,10 +13,9 @@ Creating a graphical heatmap of a 96-well plate:
 
 This code assumes you have a dataset named "DATA" which includes the variables "ROW" (A-H), "COLUMN" (1-12), and "INTENSITY" for each sample.
 
-### FOR INPUT CSV EXAMPLE, click [HERE] (https://user-images.githubusercontent.com/16819535/30115911-13540b72-92ea-11e7-8b3d-cb2da677df11.png)
+### FOR INPUT CSV EXAMPLE HEADER, click [HERE](https://user-images.githubusercontent.com/16819535/30115911-13540b72-92ea-11e7-8b3d-cb2da677df11.png)
 ### FOR CODE OUTPUT EXAMPLE, click [HERE](https://user-images.githubusercontent.com/16819535/30114617-642c1912-92e6-11e7-9437-bbeb67421194.png)
 
-hyperlink to image: https://user-images.githubusercontent.com/16819535/30114617-642c1912-92e6-11e7-9437-bbeb67421194.png
 
 Here's the code:
 
