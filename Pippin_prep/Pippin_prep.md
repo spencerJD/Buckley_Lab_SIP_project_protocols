@@ -62,16 +62,31 @@ See **Printing protocols** in the [README](../README.md#printing-protocols-conve
     3. For the well that you want to add your sample to, remove 40uL of the buffer
     4. Add the 40uL sample to the well you just removed buffer from
     5. For the Standard, no need to mix with loading solution; just add 40uL std (we use Marker S1 as our standard).
-  1. Click "start"
-  2. Make sure things are going ok by checking the status bar for each lane in the upper right
-  3. Run should take 4-4.5 hours (you make check on it occasionally to make sure things are running ok)
+  1. Shut the lid and click "start".
+  2. Make sure things are going OK by checking the status bar for each lane in the upper right
+  3. Run should take 2 hours & 45 minutes + an addition 45 minute waiting period to increase yield.
+    * You should check on the progress occasionally to make sure things are running OK
 
 ### Elution
-  1. Pipette 65uL of sample out of the elution well
+  * Make sure to pre-weigh and label a 2 ml tube for each sample.
+  
+  1. Pipette 65 uL of sample out of the elution well
   2. Add 40uL 0.1\% Tween (comes with kit) into same well
-  3. Incubate for 1min
-  4. Pipette the 40uL tween back out of elution well and add to first elution of that sample (105uL total)
+  3. Incubate for 1 min
+  4. Pipette the 40 uL tween back out of elution well and add to first elution of that sample (105 uL total)
   5. Repeat for each sample
+
+### Checking the size-selected DNA
+
+  * The resulting DNA fragment size distribution can be checked with a gel:
+    * 1% agarose in TAE buffer 
+    * gel dye: Sybr Safe
+    * ladder: 2-log
+    * voltage: ~1.5 hours
+    * volume: 3 ul of ladder, 3 ul of each sample + 6x loading dye
+ * The nucleotide concentration is assess with PicoGreen assays:
+   * 1 ul post-Pippin sample per PicoGreen rxn
+   * PicoGreen quantifications done in duplicate for each sample (as always)
 
 ### Storage
 

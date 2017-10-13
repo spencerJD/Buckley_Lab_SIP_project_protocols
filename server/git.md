@@ -83,10 +83,134 @@ Let's assume you want to revert a file named `TEST.txt`
   * Save the old file over the new file:
     * `git show 9558be93892393fa661392fb55686016f0dfb5f5:TEST.txt > TEST.txt`  
 
+
+## Dealing with merge conflicts
+
+* **Merge with accepting `their` edits**
+  * `git checkout --theirs path/of/file`    
+* **Force pull (overwrite local files)**
+  * Method 1
+    * Resetting your changes prior to pulling
+    * steps
+	  * `git reset --hard HEAD`
+        * resetting your changes
+	  * `git clean -f -d`		
+        * [optiontal] - deletes all untracked files/directories
+	  * `git pull`
+  * Method 2
+    * Force merging
+	* steps
+      * `git fetch origin master`
+      * `git merge -s recursive -X theirs origin/master`
+* **Abort a merge (e.g., if in conflict resolution mode)**
+  * `git merge --abort`
+* **Undo merge**
+  * `git reset --hard HEAD`
+
+
+## Branching
+
+* listing branches (-a = remote)
+  * `git branch -a`
+* make new branch
+  * `git branch testing`
+* changing to a branch
+  * `git checkout testing`
+* merging (to master)
+  * `git checkout master`
+  * `git merge testing`
+* merging 'somebranch' to master (overwrite master)
+  * `git checkout master`
+  * `git merge -X theirs somebranch`
+* deleting a branch
+  * `git branch -d testing`
+* push branch to remote repo
+  * `git push origin testing`
+* see branch merging
+  * `git branch --merged`
+* see remote branches
+  * `git branch -r`
+* rename branch
+  * `git branch -m old_branch new_branch`
+* view file in another branch
+  * `git show feature/CLdb_v2:bin/script.pl`
+* pull a new branch from origin
+  * NOTE: may have to run `git remote update` and possibly `git fetch`
+  * `git checkout -b develop origin/develop`
+* show files added in current branch (relative to master)
+  * `git diff --name-only MYBRANCH master`
+
+
+## Remote
+
+* showing remotes
+  * `git remote -v`
+* pushing (updating repo)
+  * `git push ./path2dir/remote_repo.git`
+* fetching new changes from server
+  * `git fetch origin`
+* pulling (fetching and merging)
+  * `git pull`
+* showing origin branch
+  * `git remote show origin`
+* delete|remote remote (eg. origin)
+  * `git remote rm origin`
+* new origin
+  * `git remote add origin /var/git/my_repo`
+* fetching (adding) a branch from remote
+  * `git checkout --track origin/feature/CLdb_v2m`
+  * OR:
+  * `git fetch <remote> <rbranch>:<lbranch>`
+  * `git checkout <lbranch>`
   
-## Code to make using git easier
+
+## Undo/rollback/revert changes
+
+* amend commit
+  * `git commit --amend`
+* revert un-stage file
+  * `git checkout FILE`
+* discard last commit (and keep working before actually commiting)
+  * `git reset HEAD~`
+* unstaging
+  * `git reset HEAD FILE`
+* revert an added file
+  * `git reset FILE`
+* rollback to an older commit
+  * `git log`						
+    * getting commit version ('commit_name')
+  * `git checkout commit_name`
+    * checking out old version
+  * `git reset --hard HEAD^`
+    * reset to last commit
+* reverting to old commit
+  * `git revert commit_id`
+  * undo changes made during old commit but keep history (may have merge conflicts)
+* find detached head changes
+  * `git reflog show HEAD@{now} -10`
+* revert to tag
+  * `git reset --hard v0.1`
+* show/view old version of file
+  `git show REVISION:path/to/file`		
+    * last revision: `git show HEAD~1:
+    * 4th last revision: git show HEAD~4:src/main.c
+* replace current copy w/ old version
+  * `git show c2ab3a32900caa3f07558ddcd0a4402d7b9841c4:./bin/FILE.txt > bin/FILE.txt`
+* view file in another branch
+  * `git show feature/CLdb_v2:bin/script.pl`
+* show all files in a commit
+  * `git ls-tree --name-only -r 3d12dad913806d279c73875a52a3c0f4220dd57b`
+* show files committed in old commit
+  * `git show --pretty="format:" --name-only 3d12dad913806d279c73875a52a3c0f4220dd57b`
+* diff (compare) file with last commit
+  * `git diff HEAD@{1} filename`
+* show old version of file
+  * `git show HEAD^:path/to/file`
+
+
+## Code to make using git a bit easier
   
 ~~~  
-# alias for pretty git log
+# alias for a pretty git log
 alias git-lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  
 ~~~

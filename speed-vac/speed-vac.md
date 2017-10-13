@@ -10,6 +10,17 @@ Ashley Campbell, Chantal Koechli, and Nick Youngblut (2014)
 
 See **Printing protocols** in the [README](../README.md#printing-protocols-conversion-of-protocols-to-pdf)
 
+## Helpful hints
+
+* To speed up the evaporation process (eg., if >=0.5 ml of sample), subdivide your sample(s) into multiple
+2 mL tubes and then recombine them once they have all concentrated down to ~50-100 ul.
+
+* Use pre-weighed tubes (weighed prior to adding sample) to quickly and accurately determine the sample
+volume as you repeatedly check on your samples during the evaporation process. With this method, you can
+easily evaporate samples to within a few ul of the desired volume.
+	* TE buffer can usually be used to bring the volume back up to the desired volume if evaporation
+	has continued beyond that volume.
+
 
 ## Method
 

@@ -188,3 +188,11 @@ Picogreen reagent:
 1.  To read plate, open the plate reader using the open/close button and
     place the plate into the reader. Note the orientation of the plate!
     Then press the read button.
+
+1.  Once read is done, save file and export data as .txt file.
+
+1.  OPTIONAL: format data into 96 well plate layout. This format will correspond to the wells the samples came from on the origin plate.
+	1. Open python script "plateReaderParse.py" found on desktop.
+	1. You will be be propted to select input file. Select text file containing PicoGreen assay results.
+	1. Enter starting and ending wells that the samples were take from on the origin plate.
+	1. The python script will return a screen with the assay data in a 96 well plate layout and will create a .txt file containg the 		data. The new data file will have the same name as the input file (step ii) but end in _plate.txt.

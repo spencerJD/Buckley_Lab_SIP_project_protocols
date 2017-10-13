@@ -16,11 +16,11 @@ See **Printing protocols** in the [README](../README.md#printing-protocols-conve
 ### Connect to the using `ssh` and port forwarding
 
 * You need to pick a port to forward on.
-  * Pick a 4-5 digit number >6666
+  * Pick a 4-5 digit number greater than 6666
   * For this tutorial, let's use `9999`
 
 1. Open Terminal on your Mac 
-1. Type: `ssh ssh -L 9999:localhost:9999 USERNAME@doe-sys76.ag.cornel.edu`
+1. Type: `ssh -L 9999:localhost:9999 USERNAME@doe-sys76.ag.cornell.edu`
   * Change `USERNAME` to your actual username for the server.
 
 ### On the server (once connected via ssh)
@@ -29,8 +29,9 @@ See **Printing protocols** in the [README](../README.md#printing-protocols-conve
   * The notebook files end in `.ipynb`
 1. To start the jupyter webserver, type: `screen jupyter notebook --port 9999 --no-browser`
   * You can use `screen -S MyScreenName` to name that screen instance.
-    * This screen instance would thus be called `MyScreenName`
-1. To detect from the screen instance, type: `crtl+a` then `d`.
+    * Example: `screen -S MyScreenName jupyter notebook --port 9999 --no-browser`
+      * This screen instance would thus be called `MyScreenName`
+1. To detatch from the screen instance, type: `crtl+a` then `d`.
   * The screen instance will now be open until you or someone else kills the process.
   * To list the screens that you have open, type: `screen -ls`
   * To reattach to a screen, type: `screen -r SCREEN_NAME`
@@ -77,12 +78,12 @@ exp_range(){
 }
 
 # ssh with port forwarding
-ssh_ports(){
+ssh_doe_ports(){
     # help
-    if [ $1 == '-h' ]
+    if [ -z "$1" ] || [ $1 == '-h' ]  
     then
         echo "Usage:       ssh_port username port(s)"
-        echo "Description: ssh with port forwarding (potentially multiple ports)"
+        echo "Description: ssh the DOE server with port forwarding (on multiple ports)"
         echo "Example1:    ssh_port nick 7701"
         echo "Example2:    ssh_port nick 7701 7702    #(2 ports)"
         echo "Example3:    ssh_port nick 7701..7704   #(4 ports)"
