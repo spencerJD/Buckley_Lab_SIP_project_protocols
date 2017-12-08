@@ -3,7 +3,7 @@ git
 
 ## Authorship
 
-Nick Youngblut (2015) Sam Barnett (2017)
+Nick Youngblut, Sam Barnett (2017)
 
 
 ## Printing this protocol
