@@ -216,17 +216,17 @@ Let's assume you want to revert a file named `TEST.txt`
 
 1. Go into your project directory `cd /home/USER/my_project`
 2. Type: `git init`
-  * Inititates project as a git repo.
+ 	* Inititates project as a git repo.
 3. Type: `git add .`
-  * Adds all files to tracking
-  * This would be the point where you should think about which files you don't want tracked (gitignore)
+  	* Adds all files to tracking
+  	* This would be the point where you should think about which files you don't want tracked (gitignore)
 4. Type: `git commit -a -m "Initial commit"`
-  * This is your initial commit
+  	* This is your initial commit
 5. Type" `git clone --bare /home/USER/my_project /home/git/my_project.git`
-  * Clones the project repo into the git directory but keeps in bare to save server space. This means it doesn't keep an image of the repo in the git directory.
+  	* Clones the project repo into the git directory but keeps in bare to save server space. This means it doesn't keep an image of the repo in the git directory.
 6. Go into the new project directory `cd /home/git/my_project.git`
 7. Type: `git init --bare --shared`
-  * This reinitializes the new master git repo such that it can be shared with everyone in the git group.
+  	* This reinitializes the new master git repo such that it can be shared with everyone in the git group.
 8. You may need to change the path to master in your local version of this project repo. To do this, go into your local project directory and type: `git remote add origin /home/git/my_project.git`.  You can check to see if your local repo is connecting to the correct master by running: `git remote show origin`.
 9. Just to be safe, push any changes that you might have made: `git push origin master`
 
